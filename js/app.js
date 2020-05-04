@@ -7,7 +7,7 @@ function main()
     const itemDisplay=document.querySelector("#task-list-bottom-area")
    
     addButton.addEventListener("click", function(){
-        if(itemVal.value=="")//nothing in the field
+        if(itemVal.value=="")//nothing in the field.
         {
             itemVal.value="";
             itemVal.focus()
@@ -55,10 +55,6 @@ function main()
         //Option 2
         itemDisplay.remove();// Nanosecond slower
 
-        });   
-
- 
-        
-    });
+        }); 
 }
 main();
