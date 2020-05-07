@@ -1,6 +1,5 @@
 function main()
 {
-
     const itemVal=document.querySelector("#item");//Fetch Textbox from DOM (OBJ)
     const addButton=document.querySelector("#addButton");
     const clearAllButton=document.querySelector("#clearAllButton");
@@ -34,8 +33,6 @@ function main()
             div.appendChild(h3) //nesting within the div (making it parent)
             div.appendChild(a) //nesting within the div (making it parent)
             itemDisplay.appendChild(div) //Adding dynamic div to existing Main div (Parent)
-
-
         }
     });
 
@@ -54,7 +51,25 @@ function main()
         */
         //Option 2
         itemDisplay.remove();// Nanosecond slower
+        location.reload(); //refreshes page
 
         }); 
+
+    document.addEventListener("click", function(event){
+
+        const elementclicked=event.target;
+        const elementIDclicked=document.getElementById("remove")
+
+        console.log(elementclicked)
+        console.log(elementIDclicked)
+        
+        if(elementclicked.tagName=="A" && elementIDclicked.innerHTML=="Remove")
+        {
+            const parentElement=elementclicked.parentElement;
+            parentElement.remove();  
+        }
+    });
+        
 }
+
 main();
